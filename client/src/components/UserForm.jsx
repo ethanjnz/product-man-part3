@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-export default () => {
+const UserForm = (props) => {
     //keep track of what is being typed via useState hook
     const [title, setTitle] = useState("");
-    const [price, setPrice] = useState("");
+    const [price, setPrice] = useState(0);
     const [description, setDescription] = useState("");
     //handler when the form is submitted
     const onSubmitHandler = e => {
@@ -17,8 +17,9 @@ export default () => {
         })
             .then(res => console.log(res))
             .catch(err => console.log(err))
+        props.fetchData()
         setTitle("")
-        setPrice("")
+        setPrice(0)
         setDescription("")
     }
     return (
@@ -39,4 +40,6 @@ export default () => {
         </form>
     )
 }
+
+export default UserForm
 

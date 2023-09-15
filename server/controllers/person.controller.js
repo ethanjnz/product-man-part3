@@ -14,6 +14,15 @@ module.exports.createUser = (req, res) => {
 // read all
 module.exports.allUser = (req, res) => {
     User.find()
-        .then((userList) => res.json(userList))
-        .catch((err) => res.json(err));
+        .then(users => res.json(users))
+        .catch(err => res.json(err));
 };
+
+// read one person
+module.exports.getUser = (req, res) => {
+    User.findOne({ _id: req.params.id })
+        .then(user => res.json(user))
+        .catch(err => res.json(err))
+}
+
+
