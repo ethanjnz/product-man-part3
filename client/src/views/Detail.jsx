@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Detail = (props) => {
     const [user, setUser] = useState({});
@@ -17,6 +18,7 @@ const Detail = (props) => {
             <p>Title: {user.title}</p>
             <p>Price: ${user.price}</p>
             <p>Description: {user.description}</p>
+            <Link to={`/user/${user._id}/edit`}>Edit</Link>
 
         </div>
     )

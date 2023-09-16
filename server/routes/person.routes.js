@@ -5,4 +5,5 @@ module.exports = function (app) {
     app.get('/api', UserController.allUser);
     app.get('/api/user/:id', UserController.getUser)
     app.post('/api/user', UserController.createUser)
+    app.patch('/api/user/:id', UserController.updateUser)
 }

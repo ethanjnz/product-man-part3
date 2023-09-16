@@ -25,4 +25,17 @@ module.exports.getUser = (req, res) => {
         .catch(err => res.json(err))
 }
 
+// update the user
+module.exports.updateUser = (req, res) => {
+    User.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
+        .then(updatedUser => res.json(updatedUser))
+        .catch(err => res.json(err))
+}
+
+// delete the user
+module.export.deleteUser = (req, res) => {
+    User.deleteOne({ _id: req.params.id })
+        .then(deleteConfirmation => res.json(deleteConfirmation))
+        .catch(err => res.json(err))
+}
 
