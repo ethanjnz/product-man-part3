@@ -38,22 +38,22 @@ const Update = (props) => {
 
 
     return (
-        <div>
-            <h1>test</h1>
-            <form onSubmit={updateUser}>
-                <p>
-                    <label>Title</label><br />
-                    <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} />
-                </p>
-                <p>
-                    <label>Price</label><br />
-                    <input type="text" onChange={(e) => setPrice(e.target.value)} value={price} />
-                </p>
-                <p>
-                    <label>Description</label><br />
-                    <input type="text" onChange={(e) => setDescription(e.target.value)} value={description} />
-                </p>
-                <input type="submit" />
+        <div className='m-5'>
+            <h1>Update</h1>
+            <form className="mx-auto card w-50 m-5 shadow-lg" onSubmit={updateUser}>
+                <div className='m-3'>
+                    <label className='form-label'>Title</label><br />
+                    <input className='form-control' type="text" onChange={(e) => setTitle(e.target.value)} value={title} />
+                </div>
+                <div className='m-3'>
+                    <label className='form-label'>Price</label><br />
+                    <input className='form-control' type="number" onChange={(e) => setPrice(e.target.value)} value={price} />
+                </div>
+                <div className='m-3'>
+                    <label className='form-label'>Description</label><br />
+                    <input className='form-control' type="text" onChange={(e) => setDescription(e.target.value)} value={description} />
+                </div>
+                <div ><input className='btn btn-primary m-3' type="submit" /></div>
             </form>
         </div>
     )

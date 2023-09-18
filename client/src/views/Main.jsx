@@ -18,6 +18,10 @@ const Main = (props) => {
             .catch(err => console.log(err));
     }
 
+    const removeFromDom = (userId) => {
+        setUser(user.filter(user => user._id != userId))
+    }
+
     useEffect(() => {
         fetchData();
     }, [])
@@ -25,8 +29,7 @@ const Main = (props) => {
     return (
         <div>
             <UserForm fetchData={fetchData} />
-            <hr />
-            {loaded && <UserList user={user} />}
+            {loaded && <UserList user={user} removeFromDom={removeFromDom}/>}
 
 
         </div>

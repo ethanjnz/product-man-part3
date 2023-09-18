@@ -33,7 +33,7 @@ module.exports.updateUser = (req, res) => {
 }
 
 // delete the user
-module.export.deleteUser = (req, res) => {
+module.exports.deleteUser = (req, res) => {
     User.deleteOne({ _id: req.params.id })
         .then(deleteConfirmation => res.json(deleteConfirmation))
         .catch(err => res.json(err))
